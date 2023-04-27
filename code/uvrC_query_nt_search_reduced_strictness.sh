@@ -53,8 +53,8 @@ awk -F "\t" 'BEGIN { OFS = "\n"} {print ">" $1 "_" $3 ":" $6, $12}' $output_alig
 fold -w 70 -s $fasta_format_alignment_long/"$prefix"_long.fasta > $final_fasta/"$prefix".fasta
 done < $raw_alignment_list
 
-#Remove duplicate results in fasta files (Clustal won't work with files that has duplicates)
-#-------------------------------------------------------------------------------------------
+#Remove duplicate results in fasta files (Clustal won't work with files that have duplicates)
+#--------------------------------------------------------------------------------------------
 #Generate a list of fasta files to work on
 #-----------------------------------------
 ls $final_fasta | grep .fasta | sed "s/.fasta//g" | uniq > $fasta_list
